@@ -33,3 +33,17 @@ function game(player1, player2, board, turn) {
 
   return { getWinner };
 }
+
+const newGameButton = document.querySelector(".new-game-button");
+const boardDiv = document.querySelector(".board");
+
+newGameButton.addEventListener("click", () => {
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+      const cell = document.createElement("div");
+      cell.id = `${i}${j}`;
+      cell.classList.add("cell");
+      boardDiv.appendChild(cell);
+    }
+  }
+});
